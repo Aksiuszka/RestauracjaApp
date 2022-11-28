@@ -10,6 +10,11 @@ namespace Fudee.Models
         [Display(Name = "Identyfikator:")]
         public int IdDishes { get; set; }
 
+        [Display(Name = "Zdjęcie potrawy:")]
+        [MaxLength(128)]
+        [FileExtensions(Extensions = ". jpg,. png,. gif", ErrorMessage = "Niepoprawne rozszerzenie pliku.")]
+        public string? ImageDish { get; set; }
+
         [Required]
         [Display(Name = "Nazwa potrawy:")]
         [MaxLength(30, ErrorMessage = "Nazwa potrawy nie może przekroczyć 30 znaków")]
@@ -28,6 +33,7 @@ namespace Fudee.Models
         [Display(Name = "Danie restauracji:")]
         public int IdRestaurant { get; set; }
         [ForeignKey("IdRestaurant")]
+
         public virtual Restaurant? Restaurant { get; set; }
     }
 }

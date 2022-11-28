@@ -35,15 +35,23 @@ namespace Fudee.Data.Migrations
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
+                    b.Property<int?>("LocalNr")
+                        .IsRequired()
+                        .HasColumnType("int");
+
                     b.Property<string>("PostCode")
                         .IsRequired()
                         .HasMaxLength(5)
                         .HasColumnType("nvarchar(5)");
 
-                    b.Property<string>("Street")
+                    b.Property<string>("StreetName")
                         .IsRequired()
                         .HasMaxLength(70)
                         .HasColumnType("nvarchar(70)");
+
+                    b.Property<string>("StreetNr")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("IdAddress");
 
@@ -93,6 +101,10 @@ namespace Fudee.Data.Migrations
 
                     b.Property<int>("IdRestaurant")
                         .HasColumnType("int");
+
+                    b.Property<string>("ImageDish")
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("NameDishes")
                         .IsRequired()
@@ -196,6 +208,10 @@ namespace Fudee.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("SocialMedia")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("IdRestaurant");
 

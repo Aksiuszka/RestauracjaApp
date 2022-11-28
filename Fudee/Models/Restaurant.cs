@@ -53,6 +53,10 @@ namespace Fudee.Models
         public bool Events { get; set; }
 
         [Required]
+        [Display(Name = "Social Media:")]
+        public string? SocialMedia { get; set; }
+
+        [Required]
         [Display(Name = "Data dodania:")]
         [DataType(DataType.Date, ErrorMessage = "Niepoprawny format daty")]
         [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}")]
@@ -70,6 +74,7 @@ namespace Fudee.Models
 
         public virtual List<Opinion>? Opinions { get; set; }
         public virtual List<Dish>? Dishes { get; set; }
-        
+
+       
     }
 }
